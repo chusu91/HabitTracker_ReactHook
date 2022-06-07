@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
+import React, { memo, useRef } from "react";
 
-const HabitAddForm = (props) => {
+const HabitAddForm = memo((props) => {
   const inputRef = useRef();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,6 +13,6 @@ const HabitAddForm = (props) => {
       <button className="add-button">Add</button>
     </form>
   );
-};
+});
 
 export default HabitAddForm;

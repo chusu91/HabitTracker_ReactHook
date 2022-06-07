@@ -2,22 +2,29 @@ import React from "react";
 import Habit from "./habit";
 import HabitAddForm from "./habitAddForm";
 
-const Habits = (props) => {
+const Habits = ({
+  habits,
+  onIncreament,
+  onDecreament,
+  onDelete,
+  onAddHabit,
+  onReset,
+}) => {
   return (
     <div className="habits">
-      <HabitAddForm onAddHabit={props.onAddHabit} />
+      <HabitAddForm onAddHabit={onAddHabit} />
       <ul>
-        {props.habits.map((habit) => (
+        {habits.map((habit) => (
           <Habit
             key={habit.id}
             habit={habit}
-            onIncreament={props.onIncreament}
-            onDecreament={props.onDecreament}
-            onDelete={props.onDelete}
+            onIncreament={onIncreament}
+            onDecreament={onDecreament}
+            onDelete={onDelete}
           />
         ))}
       </ul>
-      <button className="habits-reset" onClick={props.onReset}>
+      <button className="habits-reset" onClick={onReset}>
         Reset All
       </button>
     </div>

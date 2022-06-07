@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import "./app.css";
 import Habits from "./components/habits";
 import Navbar from "./components/navbar";
@@ -15,7 +15,7 @@ function App() {
     setHabits(initialHabits);
   }, []);
 
-  const handleIncrease = (habit) => {
+  const handleIncrease = useCallback((habit) => {
     setHabits((currentHabits) =>
       currentHabits.map((item) => {
         if (item.id === habit.id) {
@@ -24,9 +24,9 @@ function App() {
         return item;
       })
     );
-  };
+  }, []);
 
-  const handleDecrease = (habit) => {
+  const handleDecrease = useCallback((habit) => {
     setHabits((currentHabits) =>
       currentHabits.map((item) => {
         if (item.id === habit.id) {
@@ -36,22 +36,22 @@ function App() {
         return item;
       })
     );
-  };
-  const handleDelete = (habit) => {
+  }, []);
+  const handleDelete = useCallback((habit) => {
     setHabits((currentHabits) =>
       currentHabits.filter((item) => item.id !== habit.id)
     );
-  };
+  }, []);
 
-  const handleAddHabit = (habitName) => {
+  const handleAddHabit = useCallback((habitName) => {
     //const newHabit = { key: Date.now(), name: habitName, count: 0 };
     setHabits((currentHabits) => [
       ...currentHabits,
       { id: Date.now(), name: habitName, count: 0 },
     ]);
-  };
+  }, []);
 
-  const handleReset = () => {
+  const handleReset = useCallback(() => {
     setHabits((currentHabits) =>
       currentHabits.map((item) => {
         if (item.count !== 0) {
@@ -60,7 +60,7 @@ function App() {
         return item;
       })
     );
-  };
+  }, []);
 
   return (
     <>
