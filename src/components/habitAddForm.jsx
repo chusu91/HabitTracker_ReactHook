@@ -6,10 +6,16 @@ const HabitAddForm = memo((props) => {
     e.preventDefault();
     const habitName = inputRef.current.value;
     props.onAddHabit(habitName);
+    inputRef.current.value = "";
   };
   return (
-    <form action="submit" onSubmit={handleSubmit}>
-      <input ref={inputRef} type="text" placeholder="add your habit" />
+    <form className="add-form" action="submit" onSubmit={handleSubmit}>
+      <input
+        className="add-form-input"
+        ref={inputRef}
+        type="text"
+        placeholder="add your habit"
+      />
       <button className="add-button">Add</button>
     </form>
   );

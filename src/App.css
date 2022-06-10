@@ -19,8 +19,30 @@ Button:focus {
 
   }
 
-  .navbar-logo{
+  .add-form {
+    margin-top: 1em;
+    margin-left: 1em;
+    width: 25rem;
+    height: 3rem;
     
+  }
+
+  .add-form-input {
+    height: 80%;
+    width: 80%;
+    font-size: 1.5rem;
+    border: solid 1px; 
+    
+  }
+
+  .add-button {
+    margin-left: 0.5em;
+    width: 3.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    border: solid 1px; 
+    background-color: green;
+    color: white;
   }
 
   .navbar-count{
@@ -36,6 +58,20 @@ Button:focus {
     border-radius: 50%;
   }
 
+  .habits-list {
+    margin-left: 1rem;
+  }
+
+  .habits-reset {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    width: 5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    border: solid 1px; 
+    background-color: red;
+    color: white;
+  }
 
   .habit{
     font-size: 2.5rem;
@@ -59,4 +95,17 @@ Button:focus {
     font-size: 2.5rem;
     background-color: transparent;
     margin: 0 0.1em
+  }
+
+  .habit-increase {
+    color: darkcyan;
+
+  }
+
+  .habit-decrease {
+    color: darkorange
+  }
+
+  .habit-delete {
+    color: darkred
   }

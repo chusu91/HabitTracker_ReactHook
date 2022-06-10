@@ -13,7 +13,7 @@ const Habits = ({
   return (
     <div className="habits">
       <HabitAddForm onAddHabit={onAddHabit} />
-      <ul>
+      <ul className="habits-list">
         {habits.map((habit) => (
           <Habit
             key={habit.id}
